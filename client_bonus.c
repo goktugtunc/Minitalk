@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gotunc <gotunc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/19 11:32:45 by gotunc            #+#    #+#             */
-/*   Updated: 2023/08/19 11:33:59 by gotunc           ###   ########.fr       */
+/*   Created: 2023/08/19 11:32:26 by gotunc            #+#    #+#             */
+/*   Updated: 2023/08/19 11:32:30 by gotunc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 int	ft_atoi(char *s)
 {
@@ -35,7 +35,7 @@ void	ft_sendbit(int pid, char *a)
 	j = 0;
 	while (a[j])
 	{
-		i = 7;
+		i = 31;
 		print_char = a[j];
 		while (i != -1)
 		{
@@ -43,8 +43,8 @@ void	ft_sendbit(int pid, char *a)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			i--;
 			usleep(100);
+			i--;
 		}
 		j++;
 	}
